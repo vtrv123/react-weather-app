@@ -40,27 +40,27 @@ function App() {
           />
         </div>
 
-        <div className="container">
-          <div className="top">
-            <div className="city">
-              <p>{data.name}</p>
-            </div>
-            <div className="image-and-temp">
-              <div className="description">
-                <img
-                  className="weather-icon"
-                  src={getIcon(data.weather ? data.weather[0].main : null)}
-                />
-                <p className="weather-condition">
-                  {data.weather ? data.weather[0].main : null}
-                </p>
+        {Object.keys(data).length !== 0 && (
+          <div className="container">
+            <div className="top">
+              <div className="city">
+                <p>{data.name}</p>
               </div>
-              <div className="temperature">
-                <h1>{data.main?.temp} °C</h1>
+              <div className="image-and-temp">
+                <div className="description">
+                  <img
+                    className="weather-icon"
+                    src={getIcon(data.weather ? data.weather[0].main : null)}
+                  />
+                  <p className="weather-condition">
+                    {data.weather ? data.weather[0].main : null}
+                  </p>
+                </div>
+                <div className="temperature">
+                  <h1>{data.main?.temp} °C</h1>
+                </div>
               </div>
             </div>
-          </div>
-          {Object.keys(data).length !== 0 && (
             <div className="bottom">
               <div className="feels">
                 <p className="bold">{data.main?.feels_like} °C</p>
@@ -75,8 +75,8 @@ function App() {
                 <p>Wind</p>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
