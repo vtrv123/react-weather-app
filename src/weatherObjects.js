@@ -10,8 +10,6 @@ function getIcon(weathercon) {
   let iconLink;
   switch (weathercon) {
     case "Clouds":
-      iconLink = CloudsIcon;
-    case "Clouds":
       iconLink = `${CloudsIcon}`;
       break;
     case "Clear":
